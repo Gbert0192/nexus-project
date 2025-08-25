@@ -14,27 +14,7 @@ export interface SaldoResponse extends BaseApiResponse {
 }
 
 export interface DirectTopUpResponse extends BaseApiResponse {
-  list_dtu: [
-    {
-      id: "3343DSD3433DDXXX";
-      name: "Free Fire";
-      image: "https://semutganteng.fra1.digitaloceanspaces.com/UniPlay/54a9960aadb5de1938dec57081bdb642.png";
-      publisher: "Garena";
-      publisher_website: "https://www.garena.co.id";
-      denom: [
-        {
-          id: "5343DSD3433DDXXX==";
-          package: "5 Diamonds";
-          price: "1000";
-        },
-        {
-          id: "6343DSD3433DDXXX==";
-          package: "12 Diamonds";
-          price: "2000";
-        },
-      ];
-    },
-  ];
+  list_dtu: Product[];
 }
 
 export interface Denomination {
