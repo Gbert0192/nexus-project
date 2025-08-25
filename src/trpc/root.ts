@@ -1,3 +1,4 @@
+import { midtransRouter } from "@/server/midtrans/midtrans.router";
 import { uniplayRouter } from "@/server/uniplay/direct-top-up.router";
 import { createCallerFactory, createTRPCRouter } from "@/trpc/trpc";
 
@@ -8,6 +9,7 @@ import { createCallerFactory, createTRPCRouter } from "@/trpc/trpc";
  */
 export const appRouter = createTRPCRouter({
   uniplay: uniplayRouter,
+  midtrans: midtransRouter,
 });
 
 // export type definition of API

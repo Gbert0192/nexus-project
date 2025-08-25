@@ -12,6 +12,7 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    SERVER_KEY: z.string(),
   },
 
   /**
@@ -21,6 +22,7 @@ export const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    NEXT_PUBLIC_CLIENT_KEY: z.string(),
   },
 
   /**
@@ -31,6 +33,8 @@ export const env = createEnv({
     // DATABASE_URL: process.env.DATABASE_URL,
     UNIPLAY_API_KEY: process.env.UNIPLAY_API_KEY,
     NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_CLIENT_KEY: process.env.NEXT_PUBLIC_CLIENT_KEY,
+    SERVER_KEY: process.env.SERVER_KEY,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
