@@ -5,6 +5,10 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  images: {
+    domains: ["digivospaces.b-cdn.net", "uniplay.id"],
+  },
+};
 
 export default config;
