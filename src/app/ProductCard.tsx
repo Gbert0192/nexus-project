@@ -13,7 +13,7 @@ export interface Product {
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <Card className="group relative aspect-[3/4] cursor-pointer overflow-hidden rounded-xl border-none shadow-lg outline-0 outline-transparent transition-all duration-300 ease-in-out hover:outline-2 hover:outline-white">
+    <Card className="group relative aspect-[3/4] cursor-pointer overflow-hidden rounded-xl border-none shadow-lg outline-0 outline-transparent transition-all duration-300 ease-in-out hover:outline-3 hover:outline-orange-500">
       <Image
         src={product.image}
         alt={product.name}
@@ -23,13 +23,13 @@ export function ProductCard({ product }: { product: Product }) {
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
       />
 
-      <div className="absolute inset-0 bg-white/10 opacity-0 backdrop-blur-sm transition-opacity duration-500 ease-out group-hover:opacity-100"></div>
+      <div className="absolute inset-0 bg-white/5 opacity-0 backdrop-blur-lg transition-opacity duration-500 ease-out group-hover:opacity-100"></div>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden p-4 text-white">
-        <h3 className="-translate-x-10 transform text-center text-xl font-bold tracking-wide opacity-0 drop-shadow-lg transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:opacity-100 md:text-2xl">
+        <h3 className="-translate-x-10 transform text-center text-lg font-bold tracking-wide opacity-0 drop-shadow-lg transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:opacity-100 md:text-2xl">
           {product.name}
         </h3>
-        <p className="translate-x-10 transform text-sm text-gray-200 opacity-0 drop-shadow-md transition-all delay-100 duration-500 ease-out group-hover:translate-x-0 group-hover:opacity-100 md:text-base">
+        <p className="translate-x-10 transform text-xs text-white opacity-0 drop-shadow-md transition-all delay-100 duration-500 ease-out group-hover:translate-x-0 group-hover:opacity-100 md:text-base">
           {product.publisher}
         </p>
       </div>

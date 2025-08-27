@@ -20,24 +20,21 @@ export default function Header({
   logoSrc = "/img/favicon.jpeg",
   navLinks = [
     { label: "Home", href: "/" },
-    { label: "Products", href: "/products" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "About", href: "/about" },
+    { label: "Check Transaction", href: "/check-transaction" },
   ],
 }: HeaderProps) {
   return (
-    <header className="w-full border-b bg-gradient-to-r from-red-800 via-orange-600 to-red-700 text-white shadow-lg">
-      <div className="mx-auto flex items-center justify-between px-4 py-3 md:container">
-        {/* kiri: burger + logo */}
-        <div className="flex items-center gap-3">
+    <header className="sticky top-0 z-50 h-[10dvh] w-full bg-gradient-to-r from-red-950 via-black to-red-950 shadow-md">
+      <div className="mx-auto flex h-full items-center justify-between px-4 md:container">
+        <div className="flex items-center gap-4">
           <Sheet>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-10 w-10 text-white"
+                className="h-12 w-12 text-white"
               >
-                <MenuIcon className="h-5 w-5" />
+                <MenuIcon className="h-6 w-6" />
               </Button>
             </SheetTrigger>
 
@@ -45,8 +42,8 @@ export default function Header({
               <div className="mb-6 flex items-center justify-between">
                 <span className="font-semibold">Menu</span>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="h-8 w-8">
-                    <XIcon className="h-5 w-5" />
+                  <Button variant="ghost" size="icon" className="h-10 w-10">
+                    <XIcon className="h-6 w-6" />
                   </Button>
                 </SheetTrigger>
               </div>
@@ -56,7 +53,7 @@ export default function Header({
                   <a
                     key={n.href}
                     href={n.href}
-                    className="hover:bg-muted rounded-md px-3 py-2 text-base font-medium"
+                    className="rounded-md px-3 py-2 text-base font-medium text-white transition hover:bg-white/10"
                   >
                     {n.label}
                   </a>
@@ -65,12 +62,11 @@ export default function Header({
             </SheetContent>
           </Sheet>
 
-          <div className="relative h-8 w-8 flex-shrink-0">
+          <div className="relative h-12 w-12 flex-shrink-0">
             <Image src={logoSrc} alt="logo" fill className="object-contain" />
           </div>
         </div>
-
-        <div className="w-10" />
+        <div className="w-12" />
       </div>
     </header>
   );

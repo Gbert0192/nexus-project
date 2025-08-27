@@ -22,22 +22,8 @@ export function Carousel({ images, alt = "carousel image" }: CarouselProps) {
     emblaApi?.scrollNext();
   }, [emblaApi]);
 
-  const [vh, setVh] = React.useState(0);
-
-  React.useEffect(() => {
-    const pxToVh = (px: number) => (px / window.innerHeight) * 100;
-    setVh(pxToVh(400));
-
-    const handleResize = () => setVh(pxToVh(672));
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <div
-      className="relative mx-auto w-[88vw] overflow-hidden rounded-3xl"
-      style={{ height: `${vh}vh` }}
-    >
+    <div className="relative mx-auto aspect-video h-[35vh] w-full overflow-hidden rounded-3xl">
       <div ref={emblaRef} className="h-full overflow-hidden">
         <div className="flex h-full">
           {images.map((src, i) => (
@@ -57,7 +43,7 @@ export function Carousel({ images, alt = "carousel image" }: CarouselProps) {
       <Button
         variant="ghost"
         onClick={scrollPrev}
-        className="absolute top-1/2 left-2 h-10 w-10 -translate-y-1/2 rounded-md bg-black/40 text-white shadow-md hover:bg-black/40 hover:text-white"
+        className="absolute top-1/2 left-2 h-10 w-10 -translate-y-1/2 rounded-md bg-black/40 text-white shadow-md hover:bg-black/40 hover:text-white md:left-4"
       >
         <ChevronLeft className="h-6 w-6" />
       </Button>
@@ -65,7 +51,7 @@ export function Carousel({ images, alt = "carousel image" }: CarouselProps) {
       <Button
         variant="ghost"
         onClick={scrollNext}
-        className="absolute top-1/2 right-2 h-10 w-10 -translate-y-1/2 rounded-md bg-black/40 text-white shadow-md hover:bg-black/40 hover:text-white"
+        className="absolute top-1/2 right-2 h-10 w-10 -translate-y-1/2 rounded-md bg-black/40 text-white shadow-md hover:bg-black/40 hover:text-white md:right-4"
       >
         <ChevronRight className="h-6 w-6" />
       </Button>

@@ -21,7 +21,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body>
+      <body
+        // style={{ backgroundImage: "url('/img/background.jpeg')" }}
+        className="overscroll-none bg-gradient-to-r from-red-950 via-black to-red-950"
+      >
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
