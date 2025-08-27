@@ -1,11 +1,10 @@
 "use client";
-import { GameTopupCard, type Product } from "@/app/gameCardTopUp";
+import { ProductCard, type Product } from "@/app/ProductCard";
 import { api } from "@/trpc/react";
 import React from "react";
 
-// Komponen Skeleton disesuaikan dengan ukuran kartu yang baru (lebih kecil)
 const SkeletonCard = () => (
-  <div className="h-66 w-55 animate-pulse rounded-xl bg-white/10"></div>
+  <div className="aspect-[3/4] w-full animate-pulse rounded-xl bg-white/10"></div>
 );
 
 const ListGameCard = () => {
@@ -37,14 +36,17 @@ const ListGameCard = () => {
     return (
       <>
         {data.list_dtu.map((item: Product) => (
-          <GameTopupCard key={item.id} product={item} />
+          <ProductCard key={item.id} product={item} />
         ))}
       </>
     );
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#2e026d] to-[#15162c] px-4 py-8 text-white sm:px-8">
+    <div
+      className="min-h-screen w-full px-4 py-8 text-white sm:px-8"
+      style={{ backgroundImage: "url('/img/background.jpeg')" }}
+    >
       <div className="mx-auto max-w-7xl">
         <header className="mb-10 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">
@@ -54,8 +56,7 @@ const ListGameCard = () => {
             Top up instan dan aman untuk ratusan game populer.
           </p>
         </header>
-
-        <main className="grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-6 lg:grid-cols-5">
+        <main className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 md:gap-6 lg:grid-cols-7">
           {renderContent()}
         </main>
       </div>
