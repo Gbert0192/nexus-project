@@ -1,4 +1,5 @@
 "use client";
+import { Carousel } from "@/app/carousel/Carousel";
 import { ProductCard, type Product } from "@/app/ProductCard";
 import { api } from "@/trpc/react";
 import React from "react";
@@ -41,6 +42,7 @@ const ListGameCard = () => {
       </>
     );
   };
+  const images = ["/img/gusion.jpg", "/img/claude.jpg", "/img/car3.jpeg"];
 
   return (
     <div
@@ -55,6 +57,7 @@ const ListGameCard = () => {
           <p className="mt-3 text-lg text-gray-300">
             Top up instan dan aman untuk ratusan game populer.
           </p>
+          <Carousel images={images} />
         </header>
         <main className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 md:gap-6 lg:grid-cols-7">
           {renderContent()}
