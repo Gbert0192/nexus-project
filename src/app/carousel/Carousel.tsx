@@ -23,7 +23,7 @@ export function Carousel({ images, alt = "carousel image" }: CarouselProps) {
   }, [emblaApi]);
 
   return (
-    <div className="relative mx-auto aspect-video h-[35vh] w-full overflow-hidden rounded-3xl">
+    <div className="relative mx-auto aspect-video h-[40vh] w-full overflow-hidden rounded-3xl">
       <div ref={emblaRef} className="h-full overflow-hidden">
         <div className="flex h-full">
           {images.map((src, i) => (

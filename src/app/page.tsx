@@ -1,5 +1,5 @@
 import Header from "@/app/header/page";
-import ListGameCard from "@/app/ListGameCard";
+import MainPage from "@/app/MainPage";
 import { api, HydrateClient } from "@/trpc/server";
 
 export default async function Home() {
@@ -10,7 +10,7 @@ export default async function Home() {
     <HydrateClient>
       <div className="min-h-screen bg-cover bg-center">
         <Header />
-        <ListGameCard />
+        <MainPage />
       </div>
     </HydrateClient>
   );

@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu as MenuIcon, X as XIcon } from "lucide-react";
 import Image from "next/image";
+import { SearchBar } from "@/app/search/page";
 
 interface NavLink {
   label: string;
@@ -41,11 +42,6 @@ export default function Header({
             <SheetContent side="left" className="w-[70vw] p-6">
               <div className="mb-6 flex items-center justify-between">
                 <span className="font-semibold">Menu</span>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="h-10 w-10">
-                    <XIcon className="h-6 w-6" />
-                  </Button>
-                </SheetTrigger>
               </div>
 
               <nav className="flex flex-col gap-4">
@@ -66,7 +62,9 @@ export default function Header({
             <Image src={logoSrc} alt="logo" fill className="object-contain" />
           </div>
         </div>
-        <div className="w-12" />
+        <div className="flex flex-1 justify-center">
+          <SearchBar />
+        </div>
       </div>
     </header>
   );

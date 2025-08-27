@@ -13,14 +13,14 @@ export interface Product {
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <Card className="group relative aspect-[3/4] cursor-pointer overflow-hidden rounded-xl border-none shadow-lg outline-0 outline-transparent transition-all duration-300 ease-in-out hover:outline-3 hover:outline-orange-500">
+    <Card className="group relative aspect-[3/4] cursor-pointer overflow-hidden rounded-xl border-none shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:rotate-[2deg] hover:ring-3 hover:ring-orange-500">
       <Image
         src={product.image}
         alt={product.name}
         fill
         quality={100}
         sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-        className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+        className="rounded-xl object-cover ease-out group-hover:scale-110"
       />
 
       <div className="absolute inset-0 bg-white/5 opacity-0 backdrop-blur-lg transition-opacity duration-500 ease-out group-hover:opacity-100"></div>

@@ -9,7 +9,7 @@ const SkeletonCard: FC = () => (
   <div className="aspect-[3/4] w-full animate-pulse rounded-xl bg-slate-200/20"></div>
 );
 
-const ListGameCard: FC = () => {
+const MainPage: FC = () => {
   const { data, isLoading, isError } = api.uniplay.directTopUp.useQuery();
   const [limit, setLimit] = useState<number>(21);
   const [isShowingMore, setIsShowingMore] = useState<boolean>(false);
@@ -40,7 +40,7 @@ const ListGameCard: FC = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [data, limit, isLoading, isShowingMore]); // Bergantung pada state ini
+  }, [data, limit, isLoading, isShowingMore]);
 
   const renderContent = (): ReactNode => {
     if (isLoading) {
@@ -118,12 +118,18 @@ const ListGameCard: FC = () => {
         <div className="mb-10 text-center">
           <Carousel images={images} />
         </div>
-        <main className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 md:gap-6 lg:grid-cols-7">
-          {renderContent()}
-        </main>
+        <section>
+          <h2 className="mb-6 border-b border-white pb-2 text-2xl font-semibold text-white">
+            Products
+          </h2>
+
+          <main className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 md:gap-6 lg:grid-cols-7">
+            {renderContent()}
+          </main>
+        </section>
       </div>
     </div>
   );
 };
 
-export default ListGameCard;
+export default MainPage;
