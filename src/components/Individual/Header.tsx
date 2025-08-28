@@ -3,9 +3,9 @@
 import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu as MenuIcon, X as XIcon } from "lucide-react";
+import { Menu as MenuIcon } from "lucide-react";
 import Image from "next/image";
-import { SearchBar } from "@/app/search/page";
+import { SearchBar } from "@/components/Individual/SearchComponent";
 
 interface NavLink {
   label: string;
@@ -18,14 +18,19 @@ interface HeaderProps {
 }
 
 export default function Header({
-  logoSrc = "/img/favicon.jpeg",
+  logoSrc = "/img/logo.png",
   navLinks = [
     { label: "Home", href: "/" },
     { label: "Check Transaction", href: "/check-transaction" },
   ],
 }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-50 h-[10dvh] w-full bg-gradient-to-r from-red-950 via-black to-red-950 shadow-md">
+    // <header className="sticky top-0 z-50 h-[10dvh] w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 shadow-md">
+    // <header className="sticky top-0 z-50 h-[10dvh] w-full bg-black shadow-md">
+    // <header className="sticky top-0 z-50 h-[10dvh] w-full bg-zinc-950 shadow-md">
+    // <header className="sticky top-0 z-50 h-[10dvh] w-full bg-gradient-to-r from-black via-yellow-950 to-black shadow-md">
+    // <header className="sticky top-0 z-50 h-[10dvh] w-full bg-gradient-to-r from-[#2c200d] via-[#4a3715] to-[#2c200d] shadow-md">
+    <header className="sticky top-0 z-50 h-[10dvh] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-200">
       <div className="mx-auto flex h-full items-center justify-between px-4 md:container">
         <div className="flex items-center gap-4">
           <Sheet>
@@ -58,8 +63,8 @@ export default function Header({
             </SheetContent>
           </Sheet>
 
-          <div className="relative h-12 w-12 flex-shrink-0">
-            <Image src={logoSrc} alt="logo" fill className="object-contain" />
+          <div className="relative h-24 w-24 flex-shrink-0">
+            <Image src={logoSrc} alt="logo" width={600} height={600} />
           </div>
         </div>
         <div className="flex flex-1 justify-center">

@@ -20,7 +20,7 @@ export function ProductCard({ product }: { product: Product }) {
         fill
         quality={100}
         sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-        className="rounded-xl object-cover ease-out group-hover:scale-110"
+        className="rounded-xl object-cover ease-out"
       />
 
       <div className="absolute inset-0 bg-white/5 opacity-0 backdrop-blur-lg transition-opacity duration-500 ease-out group-hover:opacity-100"></div>

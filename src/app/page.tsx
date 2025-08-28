@@ -1,16 +1,20 @@
-import Header from "@/app/header/page";
+import Header from "@/components/Individual/Header";
 import MainPage from "@/app/MainPage";
-import { api, HydrateClient } from "@/trpc/server";
+import { HydrateClient } from "@/trpc/server";
+import { Footer } from "@/components/Individual/Footer";
 
-export default async function Home() {
-  const data = await api.uniplay.directTopUp();
-  console.log(JSON.stringify(data, null, 2));
+interface PageProps {
+  searchParams: Promise<Record<string, string | undefined>>;
+}
 
+export default async function Home({ searchParams }: PageProps) {
+  const params = await searchParams;
   return (
     <HydrateClient>
       <div className="min-h-screen bg-cover bg-center">
         <Header />
-        <MainPage />
+        <MainPage searchParams={params} />
+        <Footer />
       </div>
     </HydrateClient>
   );
